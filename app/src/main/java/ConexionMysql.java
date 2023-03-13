@@ -15,6 +15,7 @@ public class ConexionMysql implements ConexionDB{
 
     private Statement Statement = null;
     private ResultSet Resultado = null;
+    private ResultSet Resultado2 = null;
 
     public ConexionMysql() {
         // TODO Auto-generated constructor stub
@@ -173,11 +174,11 @@ public class ConexionMysql implements ConexionDB{
             Statement = Conectar().createStatement();
             Resultado = Statement.executeQuery("Select * FROM producto");
 
-            while(int i=0;Resultado.next();i++) {
+            for(int i=0;Resultado.next();i++) {
                 Pedidos[i].SetId_Pedido(Resultado.getInt(0));
                 Pedidos[i].SetObservaciones(Resultado.getString(1));
                 Pedidos[i].SetId_Cliente(Resultado.getInt(2));
-                Pedidos[i].SetId_Ordenes(Resultado.getInt(3));
+                Pedidos[i].SetId_Ordenes(Resultado.get);
             }
         } catch (SQLException e) {
             // TODO: handle exception
@@ -195,7 +196,7 @@ public class ConexionMysql implements ConexionDB{
                 e2.printStackTrace();
             }
         }
-        return Cantidad;
+        return Pedidos;
 
     }
     //FinM�todosPedidos
