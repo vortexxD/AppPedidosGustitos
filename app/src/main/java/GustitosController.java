@@ -27,7 +27,6 @@ public class GustitosController implements ProcesadorDatosInterface{
         this.TotalProducto[3]=TacachoCecinaChorizo;
         this.TotalProducto[4]=TacachoChicharron;
         this.TotalProducto[5]=Chicha;
-        this.ConexionDB.DatoInicial(TotalProducto);
         while(i<6) {
             this.RepositorioDatos[i]=this.TotalProducto[i];
             i++;
@@ -36,8 +35,8 @@ public class GustitosController implements ProcesadorDatosInterface{
 
     @Override
     public ProductoModels[] getTotalProducto() {
-        ProductoModels[] TotalProducto = this.ConexionDB.TotalProducto();
-        return TotalProducto;
+        ProductoModels[] TotalProductos = this.ConexionDB.TotalProductos();
+        return TotalProductos;
     }
 
     @Override
@@ -52,7 +51,7 @@ public class GustitosController implements ProcesadorDatosInterface{
         if(Id<7 && this.TotalProducto[Id]>=Cantidad) {
             Codigo=false;
             this.TotalProducto[Id]-=Cantidad;
-            ConexionDB.ActualizarProducto(Id, this.TotalProducto[Id]);
+//            ConexionDB.ActualizarProducto();
         }else
         if(Id<7 && Cantidad==0)
             Codigo=false;
@@ -68,7 +67,7 @@ public class GustitosController implements ProcesadorDatosInterface{
             if(this.RepositorioDatos[Id]>=(this.TotalProducto[Id]+Cantidad)) {
                 Estado=false;
                 this.TotalProducto[Id]+=Cantidad;
-                this.ConexionDB.ActualizarProducto(Id, this.TotalProducto[Id]);
+//                this.ConexionDB.ActualizarProducto(Id, this.TotalProducto[Id]);
                 Devolucion++;
             }
         }else
@@ -82,6 +81,6 @@ public class GustitosController implements ProcesadorDatosInterface{
     @Override
     public void AñadirProducto(int Id, int Cantidad) {
         this.TotalProducto[Id]+=Cantidad;
-        ConexionDB.ActualizarProducto(Id, this.TotalProducto[Id]);
+//        ConexionDB.ActualizarProducto(Id, this.TotalProducto[Id]);
     }
 }

@@ -3,11 +3,11 @@ package Models;
 import java.util.Date;
 
 public class ContabilidadModels {
-    int Id_Cuenta;
-    int CantidadProductosVendidos;
-    float VentaTotal;
-    Date Fecha;
-    int Id_Pedido_Producto;
+    private int Id_Cuenta;
+    private int CantidadProductosVendidos;
+    private float VentaTotal;
+    private Date Fecha;
+    private int Id_Pedido_Producto;
     ContabilidadModels(int Id_Cuenta, int CantidadProductosVendidos, float VentaTotal, Date Fecha, int Id_Pedido_Producto){
         this.Id_Cuenta = Id_Cuenta;
         this.CantidadProductosVendidos = CantidadProductosVendidos;

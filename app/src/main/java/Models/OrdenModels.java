@@ -1,10 +1,10 @@
 package Models;
 
 public class OrdenModels {
-    int Id_Orden;
-    int Id_Producto;
-    int CantidadPedido;
-    int[] Id_Pedidos;
+    private int Id_Orden;
+    private int Id_Producto;
+    private int CantidadPedido;
+    private int[] Id_Pedidos;
 
     OrdenModels(int Id_Orden, int Id_Producto, int CantidadPedido, int[] Id_Pedidos){
         this.Id_Orden = Id_Orden;

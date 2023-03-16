@@ -1,10 +1,10 @@
 package Models;
 
 public class PedidoModels {
-    int Id_Pedido=0;
-    String Observaciones;
-    int Id_Cliente=0;
-    int[] Id_Ordenes;
+    private int Id_Pedido=0;
+    private String Observaciones;
+    private int Id_Cliente=0;
+    private int[] Id_Ordenes;
     PedidoModels(int Id_Pedido, String Observaciones, int Id_Cliente, int[] Id_Ordenes){
         this.Id_Pedido = Id_Pedido;
         this.Observaciones = Observaciones;

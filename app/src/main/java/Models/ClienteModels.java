@@ -1,10 +1,10 @@
 package Models;
 
 public class ClienteModels {
-    int Id_Cliente = 0;
-    String Nombres;
-    String Direccion;
-    String Telefono;
+    private int Id_Cliente = 0;
+    private String Nombres;
+    private String Direccion;
+    private String Telefono;
     ClienteModels(int id_Cliente,String Nombres, String Direccion, String Telefono){
         this.Id_Cliente = id_Cliente;
         this.Nombres = Nombres;
